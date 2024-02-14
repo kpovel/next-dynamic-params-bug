@@ -1,4 +1,4 @@
-import { handleUnsupportedLanguage } from "@/util/handleUnsuportedLang";
+import { handleUnsupportedLang } from "@/util/handleUnsuportedLang";
 import { ReactNode } from "react";
 
 export async function generateStaticParams() {
@@ -12,7 +12,7 @@ export default async function LangLayout({
   params: { lang: string };
   children: ReactNode;
 }) {
-  handleUnsupportedLanguage(params.lang);
+  handleUnsupportedLang(params.lang);
 
   return <main>Some dumn layout{children}</main>;
 }
