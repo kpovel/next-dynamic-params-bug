@@ -1,21 +1,25 @@
-import { handleUnsupportedLang } from "@/util/handleUnsuportedLang";
+import { Metadata } from "next";
 import { ReactNode } from "react";
+
+export const metadata: Metadata = {
+  title: "lang pages",
+};
 
 export function generateStaticParams() {
   return [{ lang: "en" }, { lang: "uk" }];
 }
 
 export const dynamicParams = false;
-export const dynamic = "force-dynamic";
 
 export default function LangLayout({
-  params,
   children,
 }: {
   params: { lang: string };
   children: ReactNode;
 }) {
-  handleUnsupportedLang(params.lang);
-
-  return <main>Some dumn layout{children}</main>;
+  return (
+    <div className="border-blue-800 border bg-gray-300">
+      Lang layout {children}
+    </div>
+  );
 }
