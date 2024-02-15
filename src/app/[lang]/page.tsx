@@ -1,6 +1,9 @@
 import { cookies } from "next/headers";
 
 export const dynamicParams = false;
+export function generateStaticParams() {
+  return [{ lang: "en" }, { lang: "uk" }];
+}
 
 export default function Page({ params }: { params: { lang: string } }) {
   if (params.lang !== "en" && params.lang !== "uk") {
