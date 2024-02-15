@@ -5,12 +5,6 @@ export const metadata: Metadata = {
   title: "lang pages",
 };
 
-export function generateStaticParams() {
-  return [{ lang: "en" }, { lang: "uk" }];
-}
-
-export const dynamicParams = false;
-
 export default function LangLayout({
   children,
 }: {
