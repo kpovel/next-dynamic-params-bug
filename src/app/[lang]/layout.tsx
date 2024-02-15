@@ -10,7 +10,6 @@ export function generateStaticParams() {
 }
 
 export const dynamicParams = false;
-export const dynamic = "force-dynamic";
 
 export default function LangLayout({
   children,
